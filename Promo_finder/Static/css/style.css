@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i&display=swap&subset=latin-ext');
+
+body {
+    padding: 0;
+    font-family: "Montserrat", serif;
+    background: url(../img/background.jpg) no-repeat 50% 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 80px 0 0 0;
+}
+
+.navbar {
+    position: fixed;
+    z-index: 100;
+    height: 80px;
+    overflow: hidden;
+    top: 0;
+    display: flex;
+    align-items: center;
+    background: #f1f1f1;
+    width: 100%;
+}
+
+.logo {
+    background: url(../img/logo.jpg) no-repeat 50% 50%;
+    background-size: contain;
+    width: 180px;
+    height: 70px;
+    float: left;
+    margin-left: 20px;
+}
+
+.menu {
+    position: absolute;
+    right: 20px;
+}
+
+.menu a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 20px;
+    transition: color 0.3s;
+    text-transform: uppercase;
+}
+
+.menu a:hover {
+    color:#6ab04c;
+}
+
+/* .header {
+    width: 100%;
+    height: 600px;
+    background: url(../img/background.jpg) no-repeat 50% 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top: 80px;
+} */
+
+.btn {
+    display: none;
+    position: absolute;
+    right: 20px;
+}
+
+.btn:hover > span{
+    color:#6ab04c;
+}
+
+.btn span {
+    display: block;
+    margin: 6px;
+    width: 40px;
+    height: 3px;
+    background: #333;
+}
+
+/* p {
+    padding: 20px;
+    font-size: 20px;
+    text-align: justify;
+
+} */
+
+.pricing-table {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 25%;
+    padding: 10px;
+    max-width: 320px;
+    box-sizing: border-box;
+}
+
+.table {
+    background: #fff;
+    padding: 20px 15px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px #00000070;
+}
+
+.table h2 {
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.table ul {
+    margin: 0;
+    padding: 0;
+}
+
+.table ul li {
+    padding: 10px 0;
+    list-style: none;
+    background: #f0932b;
+    color: #fff;
+    border: 2px solid #f0932b;
+    display: block;
+    padding: 10px 0;
+    border-radius: 40px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.5s linear;
+}
+
+.table ul li:hover {
+    background: #fff;
+    color: #f0932b;
+}
+
+.price {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.price span {
+    display: block;
+    font-size: 14px;
+}
+
+.table a {
+    text-decoration: none;
+    color: #2c3e50;
+    border: 2px solid #2c3e50;
+    display: block;
+    padding: 10px 0;
+    margin: 10px 0;
+    border-radius: 40px;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: 0.5s linear;
+}
+
+.table a:hover {
+    background: #2c3e50;
+    color: #fff;
+}
+
+.pop {
+    background: #2c3e50;
+    color: #fff;
+    transform: rotate(45deg);
+    padding: 10px 40px;
+    position: absolute;
+    top: 24px;
+    right: -40px;
+}
+
+@media screen and (max-width:980px) {
+    .col {
+        flex: 50%;
+    }
+}
+
+@media screen and (max-width:700px) {
+    .col {
+        flex: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        overflow: visible;
+    }
+
+    .menu {
+        width: 100%;
+        right: 0;
+        top: 80px;
+        background: #f1f1f1;
+        overflow: hidden;
+        max-height: 0;
+    }
+
+    .menu a {
+        display: block;
+        text-align: center;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .btn {
+        display: block;
+        cursor: pointer;
+    }
+
+    .show {
+        max-height: 500px;
+    }
+}

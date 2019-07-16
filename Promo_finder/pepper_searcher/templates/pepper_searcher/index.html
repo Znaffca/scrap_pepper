@@ -1,0 +1,75 @@
+{% load static %}
+<!doctype html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+            <title>Strona Główna</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="logo">
+            </div>
+
+            <a class="btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+
+            <div class="menu">
+                <a href="#">Strona główna</a>
+                <a href="{% url 'pepper_searcher:pc_new' %}">Pepper - komputery</a>
+                <a href="{% url 'pepper_searcher:rtv_new' %}">Pepper - rtv</a>
+                <a href="#">Otomoto</a>
+            </div>
+        </div>
+        {% comment %} <div class="header"> {% endcomment %}
+            <div class="pricing-table">
+            {% for key, value in ctx.items %}
+                <div class="col">
+
+                    <div class="table">
+                        <h2>{{ value.title }}</h2>
+                        {% if value.hot %}
+                            <div class="pop">Popularne!</div>
+                        {% endif %}
+                        <div class="price">
+                            {{ value.price }}
+                            {% if value.old_price %}
+                            <span> Stara - {{value.old_price}} </span>
+                            {% endif %}
+                        </div>
+                        {% if value.code %}
+                        <ul>
+                            <li>{{ value.code }}</li>
+                        </ul>
+                        {% endif %}
+                        {% if value.link %}
+                            <a href="{{ value.link }}">Idź do okazji</a>
+                        {% elif value.link2 %}
+                            <a href="{{ value.link2 }}">Idź do okazji</a>
+                        {% endif %}
+                    
+                    </div>
+
+                </div>
+              
+            {% endfor %}
+
+            </div>
+        {% comment %} </div> {% endcomment %}
+
+    <script>
+
+        $(".btn").on("click", function(){
+            $(".menu").toggleClass("show")
+        })
+
+    </script>
+
+    </body>
+
+</html> 
